@@ -1,0 +1,20 @@
+php artisan about
+- Display basic information about your application
+
+php artisan list
+- Display all artisan list commands
+
+php artisan make help
+- Display all the commands using artisan make
+
+Controller is a class which is associated to one or more routes and is responsible for handling requests of that routes.
+
+php artisan make:controller ShowCarController --invokable
+
+In Laravel "Resource Controller" is a special type of controller that provides a convenient way to handle typical CRUD operations for a resource such as database table.
+
+php artisan make:controller ProductController --resource
+
+View are files, that are responsible for presentation logic in your Laravel applications and are stored under resources/views folder
+
+Blade is Larvel's templating engine that helps you to build HTML views efficiently. It allows mixing HTML with PHP using simple and clean syntax.
