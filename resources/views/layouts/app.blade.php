@@ -1,17 +1,15 @@
-@extends('layouts.clean')
+@props(['title' => '', 'footerLinks' => ''])
 
-    @section('childContent')
+<x-base-layout :$title>
+    <x-layouts.header />
     
-        @include('layouts.partials.header')
-        @yield('content')
+        {{ $slot }} 
 
-        @hasSection('footerLinks')
-            
-            <footer>
-                @yield('footerLinks')
-            </footer>
-            
-        @endif
-        
+    <footer>
+    
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        {{ $footerLinks }}
 
-    @endsection
+    </footer>
+</x-base-layout>
