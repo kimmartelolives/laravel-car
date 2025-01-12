@@ -20,3 +20,5 @@ View are files, that are responsible for presentation logic in your Laravel appl
 Blade is Larvel's templating engine that helps you to build HTML views efficiently. It allows mixing HTML with PHP using simple and clean syntax.
 
 php artisan make:controller CarController --resource
+
+php artisan list migrate
