@@ -18,3 +18,5 @@ php artisan make:controller ProductController --resource
 View are files, that are responsible for presentation logic in your Laravel applications and are stored under resources/views folder
 
 Blade is Larvel's templating engine that helps you to build HTML views efficiently. It allows mixing HTML with PHP using simple and clean syntax.
+
+php artisan make:controller CarController --resource
