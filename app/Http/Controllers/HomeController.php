@@ -53,7 +53,7 @@ class HomeController extends Controller
             'model_id' => 1,
             'year' => 2024,
             'price' => 20000,
-            'vin' => '999',
+            'vin' => '9999',
             'mileage' => 5000,
             'car_type_id' => 1,
             'fuel_type_id' => 1,
@@ -66,7 +66,7 @@ class HomeController extends Controller
         ];
 
         // Approach 1
-        $car = Car::create($carData);
+        // $car = Car::create($carData);
 
         // // Approach 2
         // $car2 = new Car();
@@ -76,6 +76,32 @@ class HomeController extends Controller
         // // Approach 3
         // $car3 = new Car($carData);
         // $car3->save();
+
+        // $car = Car::find(1);
+        // $car->price = 1000;
+        // $car->save();
+
+        // $car = Car::updateOrCreate(
+        //     ['vin' => '9999', 'price' => 20000], 
+        //     $carData
+        // );
+
+        // dump($car);
+
+        // Car::where('published_at', null)
+        //     ->where('user_id', 1)
+        //     ->update(['published_at' => now()]);
+
+        // $car = Car::find(1);
+        // $car->delete();
+
+        // Car::destroy([2, 3]);
+
+        // Car::where('published_at', null)
+        //     ->where('user_id', 1)
+        //     ->delete();
+
+        Car::truncate();
 
         return view('home.index');
     }
