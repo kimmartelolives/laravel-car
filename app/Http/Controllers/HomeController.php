@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Car;
+use App\Models\FuelType;
+use App\Models\Maker;
 use Illuminate\Http\Request;
 
 
@@ -10,6 +12,23 @@ class HomeController extends Controller
 {
     public function index()
     {
+        //Retrieve all car records where the price is greater than $20,000
+        $cars = Car::where('price', '>', 20000)->get();
+        dump($cars);
+
+        //Fetch the Maker details where the Maker name is Toyota
+        $maker = Maker::where('name', 'Toyota')->first();
+        dump($maker);
+
+        //Insert a new FuelType with the name Electric
+        FuelType::create(['name' => 'Electric']);
+
+        //Update the price of the Car with id 1 to $15,000
+        Car::where('id', 1)->update(['price' => 15000]);
+
+        //Delete all Car records where the year is before 2020
+        Car::where('year', '<', 2020)->delete();
+
         // //select all cars
         // $cars = Car::get();
 
@@ -51,9 +70,9 @@ class HomeController extends Controller
         $carData = [
             'maker_id' => 1,
             'model_id' => 1,
-            'year' => 2024,
-            'price' => 20000,
-            'vin' => '9999',
+            'year' => 2019,
+            'price' => 1000,
+            'vin' => '999',
             'mileage' => 5000,
             'car_type_id' => 1,
             'fuel_type_id' => 1,
@@ -101,7 +120,9 @@ class HomeController extends Controller
         //     ->where('user_id', 1)
         //     ->delete();
 
-        Car::truncate();
+        // Car::truncate();
+
+
 
         return view('home.index');
     }
